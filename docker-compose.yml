@@ -16,3 +16,13 @@ services:
       - ./db:/docker-entrypoint-initdb.d/
     ports:
       - "5432:5432"
+
+  pgadmin:
+    container_name: pgadmin4_container
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: bewithdhanu@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: changeme
+    ports:
+      - "5050:80"
